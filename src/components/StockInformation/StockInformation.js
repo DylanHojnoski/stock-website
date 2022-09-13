@@ -19,19 +19,35 @@ const StockInformation = (props) => {
       })
 
   }, [])
-  
-  const PrintInfo = () => {
-    let text = ""
-    stock.forEach((value, key) => {
-      text += " " + key + ":" + value
-    })
-    return text
+
+  const Table = () => {
+    return (
+      <table>
+        <thead>
+        <tr>
+          <th>Property</th>
+          <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+         {[...stock.entries() ].map((value, key) => {
+            return (
+              <tr>
+                <td>{value[0]}</td>
+                <td>{value[1]}</td>
+              </tr>
+            )
+          })}          
+        </tbody>
+      </table>
+    )
   }
+  
 
   console.log(stock)
   return (
     <div>
-      <PrintInfo />
+      <Table />
     </div>
   )
 }
