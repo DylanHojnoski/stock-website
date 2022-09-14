@@ -18,9 +18,6 @@ const StockInformation = (props) => {
         setStock(newStock)
         
       })
-  }, [props.ticker])
-
-<<<<<<< HEAD
     fetch("https://financialmodelingprep.com/api/v3/historical-price-full/"+props.ticker.toUpperCase()+"?serietype=line&apikey=11c771c287c55dc7ad7deca367d2c0c7")
     .then(res => res.json())
     .then(historicalData => {
@@ -56,38 +53,8 @@ const StockInformation = (props) => {
           </tbody>
         </table>
       </div>
-=======
-
-  const Table = () => {
-    return (
-      <table>
-        <thead>
-        <tr>
-          <th>Property</th>
-          <th>Value</th>
-        </tr>
-        </thead>
-        <tbody>
-         {[...stock.entries() ].map((value, key) => {
-            return (
-              <tr>
-                <td key={value[0]}>{value[0]}</td>
-                <td key={value[1]}>{value[1]}</td>
-              </tr>
-            )
-          })}          
-        </tbody>
-      </table>
->>>>>>> 8d8d6e4513b5d8b8481d173d93fd52fed757648c
-    )
-  }
-  
-
-  return (
-    <div>
-      <Table />
-    </div>
   )
+}
 }
 
 export default StockInformation

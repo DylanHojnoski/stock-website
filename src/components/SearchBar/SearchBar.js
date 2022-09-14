@@ -23,11 +23,7 @@ const SearchBar = (props) => {
     if (showResults) {
       setTimeout(() => {
         setShowResults(!showResults)
-<<<<<<< HEAD
       }, 150)
-=======
-      }, 110)
->>>>>>> 8d8d6e4513b5d8b8481d173d93fd52fed757648c
     }
     else {
       setShowResults(!showResults)
