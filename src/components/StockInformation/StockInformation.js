@@ -17,8 +17,8 @@ const StockInformation = (props) => {
         setStock(newStock)
         
       })
+  }, [props.ticker])
 
-  }, [])
 
   const Table = () => {
     return (
@@ -33,8 +33,8 @@ const StockInformation = (props) => {
          {[...stock.entries() ].map((value, key) => {
             return (
               <tr>
-                <td>{value[0]}</td>
-                <td>{value[1]}</td>
+                <td key={value[0]}>{value[0]}</td>
+                <td key={value[1]}>{value[1]}</td>
               </tr>
             )
           })}          
@@ -44,7 +44,6 @@ const StockInformation = (props) => {
   }
   
 
-  console.log(stock)
   return (
     <div>
       <Table />
