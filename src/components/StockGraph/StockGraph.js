@@ -4,21 +4,28 @@ import Chart from 'chart.js/auto'
 import { Line } from 'react-chartjs-2'
 
 const StockGraph = (props) => {
+  const [months, setMonths] = useState(1)
   
   const data = {
-    labels: [...props.data.keys()].reverse(),
+    labels: [...props.data.keys()].slice(0,months*30).reverse(),
     datasets: [
       {
         label: "Graph",
-        data: [...props.data.values()].reverse(),
+        data: [...props.data.values()].slice(0,months*30).reverse(),
       }
     ],
   }
+  
 
   console.log(props.data)
   return (
   <div>
       <Line data={data} />
+      <button onClick={() => setMonths(1)}>1 month</button>
+      <button onClick={() => setMonths(3)}>3 months</button>
+      <button onClick={() => setMonths(6)}>6 months</button>
+      <button onClick={() => setMonths(12)}>1 year</button>
+      <button onClick={() => setMonths(12*5)}>5 years</button>
   </div>
   )
 }
