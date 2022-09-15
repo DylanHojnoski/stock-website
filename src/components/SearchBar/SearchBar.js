@@ -40,7 +40,7 @@ const SearchBar = (props) => {
       <input type='text' placeholder="Search" value={searchValue} onChange={handleInputChange} onFocus={changeShowResults} onBlur={changeShowResults}/>
       <ul>
         {showResults ? filteredStocks.map((stock) => {
-          return <button onClick={()=>buttonClick(stock[0])} key={stock[0]}>{stock[1]}</button>
+          return <li key={stock[0]}><button onClick={()=>buttonClick(stock[0])} key={stock[0]}>{stock[1]} ${stock[2]}</button></li>
         }) : null}
       </ul>
     </div>

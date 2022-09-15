@@ -6,8 +6,6 @@ import { Line } from 'react-chartjs-2'
 const StockGraph = (props) => {
   const [months, setMonths] = useState(1)
   
-  Chart.defaults.elements.point.pointStyle = 'line'
-
   const data = {
     labels: [...props.data.keys()].slice(0,months*30).reverse(),
     datasets: [
@@ -16,8 +14,11 @@ const StockGraph = (props) => {
         data: [...props.data.values()].slice(0,months*30).reverse(),
       }
     ],
+    pointBorderWidth: 1,
   }
   
+
+  console.log(props.data)
   return (
   <div>
       <Line data={data} />

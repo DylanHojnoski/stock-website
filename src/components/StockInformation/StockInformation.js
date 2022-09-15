@@ -34,7 +34,8 @@ const StockInformation = (props) => {
   const Table = () => {
     return (
       <div>
-        <StockGraph data={historical} />
+        {stock.size > 0 ? <h1>{stock.get('name')}</h1> : null}
+        <StockGraph data={historical} ticker={props.ticker}/>
         <table>
           <thead>
           <tr>
