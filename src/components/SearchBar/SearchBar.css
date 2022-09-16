@@ -1,3 +1,19 @@
 li {
   list-style-type: none;
 }
+
+input {
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  background-color: #C4D0C6;
+}
+
+.searchItems {
+  background-color: #C4D0C6;
+  border: none;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 3px;
+}
+

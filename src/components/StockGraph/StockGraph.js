@@ -7,6 +7,9 @@ const StockGraph = (props) => {
   const [months, setMonths] = useState(1)
   
   Chart.defaults.elements.point.pointStyle = 'line'
+  Chart.defaults.backgroundColor = '#E3E9E9'
+  Chart.defaults.elements.line.backgroundColor = '#8FA5B2'
+  Chart.defaults.elements.line.fill = '#8FA5B2'
 
   const data = {
     labels: [...props.data.keys()].slice(0,months*30).reverse(),
