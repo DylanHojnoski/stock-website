@@ -2,3 +2,15 @@ div {
   max-width: 2000px;
   max-height: 1000px;
 }
+
+.timeButton {
+  border: none;
+  border-radius: 3px;
+  background-color: #8FA5B2;
+  margin: 1px;
+  padding: 4px;
+}
+
+.timeButton:hover {
+  background-color:#556a76;
+}

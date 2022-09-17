@@ -5,6 +5,10 @@
   margin: 5px;
 }
 
+.favoriteStocks:hover {
+  background-color: #616666;
+}
+
 .favoriteStocksHolder {
   background-color: #8FA5B2;
   display: flex;

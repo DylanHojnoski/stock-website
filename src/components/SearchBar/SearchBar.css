@@ -4,7 +4,7 @@ li {
 
 input {
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 8px;
   border: none;
   background-color: #C4D0C6;
 }
@@ -15,5 +15,13 @@ input {
   margin: 1px;
   padding: 5px;
   border-radius: 3px;
+  max-width: 180px;
+  min-width: 180px;
+  min-height: 40px;
+  z-index: 10;
+}
+
+.searchItems:hover {
+  background-color: #878e88;
 }
 

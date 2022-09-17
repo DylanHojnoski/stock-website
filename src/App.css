@@ -13,6 +13,30 @@
   }
 }
 
+.navBar {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.homeImg {
+  min-height: 20px;
+  min-width: 20px;
+  max-height: 20px;
+  max-width: 20px;
+  border: none;
+}
+
+.homeButton {
+  border: none;
+  border-radius: 3px;
+  margin: 2px;
+  min-height: 30px;
+  min-width: 30px;
+  max-height: 30px;
+  max-width: 30px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
