@@ -14,3 +14,22 @@ div {
 .timeButton:hover {
   background-color:#556a76;
 }
+
+.graphHolder {
+  width: 80vw;
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.graph {
+  margin: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .graphHolder {
+    width: 100vw;
+  }
+}

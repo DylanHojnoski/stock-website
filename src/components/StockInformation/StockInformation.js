@@ -34,7 +34,6 @@ const StockInformation = (props) => {
   }, [props.ticker])
 
   const favorite = () => {
-    console.log(props.favoriteStocks)
     if (props.favoriteStocks.size == 1 && props.favoriteStocks.has(props.ticker)) {
       props.setFavoriteStocks(new Map())
       //localStorage.removeItem(props.ticker)
@@ -53,12 +52,10 @@ const StockInformation = (props) => {
 
   const Table = () => {
     return (
-      <div>
-        {stock.size > 0 ? <div><h1>{stock.get('name')}</h1> <button onClick={favorite} className={'favoriteButton'}><img src={starSource} className={'starImg'} /></button></div> : null}
-        <StockGraph data={historical} ticker={props.ticker}/>
-        <table>
+      <div className={'infoChartHolder'}>
+        <table className={'infoChart'}>
           <thead>
-          <tr>
+          <tr className={'infoRow'}>
             <th>Property</th>
             <th>Value</th>
           </tr>
@@ -66,8 +63,8 @@ const StockInformation = (props) => {
           <tbody>
            {[...stock.entries() ].map((value, key) => {
               return (
-                <tr>
-                  <td key={value[0]}>{value[0]}</td>
+                <tr className={'infoRow'}>
+                  <td key={value[0]}>{value[0].replace(/[A-Z]/g , s => ' ' + s)}</td>
                   <td key={value[1]}>{value[1]}</td>
                 </tr>
               )
@@ -81,6 +78,8 @@ const StockInformation = (props) => {
 
   return (
     <div>
+      {stock.size > 0 ? <div><h1>{stock.get('name')}</h1> <button onClick={favorite} className={'favoriteButton'}><img src={starSource} className={'starImg'} /></button></div> : null}
+      <StockGraph data={historical} ticker={props.ticker}/>
       <Table />
     </div>
   )

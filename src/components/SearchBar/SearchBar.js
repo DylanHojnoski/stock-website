@@ -18,7 +18,6 @@ const SearchBar = (props) => {
     }
   })
 
-
   const changeShowResults = () => {
     if (showResults) {
       setTimeout(() => {
