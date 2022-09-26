@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/stock-website/static/css/main.0dfe1cb0.css",
-    "main.js": "/stock-website/static/js/main.3c62c560.js",
+    "main.js": "/stock-website/static/js/main.3ded1d72.js",
     "static/media/star-svgrepo-com.svg": "/stock-website/static/media/star-svgrepo-com.8b84b8d558f6b1e0ccd935cb393a8968.svg",
     "static/media/house-svgrepo-com.svg": "/stock-website/static/media/house-svgrepo-com.c12196810d08fc044477897a75380a23.svg",
     "index.html": "/stock-website/index.html",
     "main.0dfe1cb0.css.map": "/stock-website/static/css/main.0dfe1cb0.css.map",
-    "main.3c62c560.js.map": "/stock-website/static/js/main.3c62c560.js.map"
+    "main.3ded1d72.js.map": "/stock-website/static/js/main.3ded1d72.js.map"
   },
   "entrypoints": [
     "static/css/main.0dfe1cb0.css",
-    "static/js/main.3c62c560.js"
+    "static/js/main.3ded1d72.js"
   ]
 }
