@@ -36,28 +36,31 @@ const StockInformation = (props) => {
   const favorite = () => {
     if (props.favoriteStocks.size == 1 && props.favoriteStocks.has(props.ticker)) {
       props.setFavoriteStocks(new Map())
-      //localStorage.removeItem(props.ticker)
+      localStorage.setItem("favorites", JSON.stringify([]))
       setStarSource(props.star[0])
     }
     else if (props.favoriteStocks.has(props.ticker)) {
       props.setFavoriteStocks(props.favoriteStocks.delete(props.ticker))
+      localStorage.setItem("favorites", JSON.stringify(Array.from(props.favoriteStocks.entries())))
       setStarSource(props.star[0])
     }
     else {
       props.setFavoriteStocks(props.favoriteStocks.set(props.ticker, stock.get('price')))
-      //localStorage.setItem(props.ticker, stock.get('price'))
+      localStorage.setItem("favorites", JSON.stringify(Array.from(props.favoriteStocks.entries())))
       setStarSource(props.star[1])
     }
   }
 
+
+  console.log(props.favoriteStocks)
   const Table = () => {
     return (
       <div className={'infoChartHolder'}>
         <table className={'infoChart'}>
           <thead>
           <tr className={'infoRow'}>
-            <th>Property</th>
-            <th>Value</th>
+            <th key={"property"}>Property</th>
+            <th key={"value"}>Value</th>
           </tr>
           </thead>
           <tbody>
