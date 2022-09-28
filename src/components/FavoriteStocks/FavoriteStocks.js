@@ -19,7 +19,7 @@ const FavoriteStocks = (props) => {
       <ul>
         {[...props.favoriteStocks].map((value, key) => {
           return (
-            <li key={value[0]} className={'favoriteStocks'} onClick={() => props.setSelectedStock(value[0])}>{value[0]} ${value[1]}</li>
+            <li key={value[0]} className={'favoriteStocks'} onClick={() => props.setSelectedStock(value[0])}>{value[0]} ${props.stocks.get(value[0])[1]}</li>
           )
         })}
       </ul>

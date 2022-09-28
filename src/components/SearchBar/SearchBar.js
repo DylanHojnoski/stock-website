@@ -10,13 +10,17 @@ const SearchBar = (props) => {
     setSearchValue(event.target.value)
   }
 
+  const stocks = Array.from(props.stocks.entries())
+  console.log(stocks)
+
   let count = 0
-  const filteredStocks = props.stocks.filter((stock) => {
-    if (count <= 10 && (stock[0].includes(searchValue.toUpperCase()) || stock[1].toUpperCase().includes(searchValue.toUpperCase()))) {
+  const filteredStocks = stocks.filter((stock) => {
+    if (count <= 10 && (stock[0].includes(searchValue.toUpperCase()) || stock[1][0].toUpperCase().includes(searchValue.toUpperCase()))) {
       count++
       return  true
     }
   })
+
 
   const changeShowResults = () => {
     if (showResults) {
@@ -39,7 +43,8 @@ const SearchBar = (props) => {
       <input type='text' placeholder="Search" value={searchValue} onChange={handleInputChange} onFocus={changeShowResults} onBlur={changeShowResults}/>
       <ul>
         {showResults ? filteredStocks.map((stock) => {
-          return <li key={stock[0]}><button className={'searchItems'} onClick={()=>buttonClick(stock[0])} key={stock[0]}>{stock[1]} ${stock[2]}</button></li>
+          console.log(stock)
+          return <li key={stock[0]}><button className={"searchItems"} onClick={()=>buttonClick(stock[0])} key={stock[0]}>{stock[1][0]} ${stock[1][1]} </button></li>
         }) : null}
       </ul>
     </div>

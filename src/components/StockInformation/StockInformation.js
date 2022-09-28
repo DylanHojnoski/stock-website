@@ -51,8 +51,6 @@ const StockInformation = (props) => {
     }
   }
 
-
-  console.log(props.favoriteStocks)
   const Table = () => {
     return (
       <div className={'infoChartHolder'}>
@@ -77,7 +75,6 @@ const StockInformation = (props) => {
       </div>
     )
   }
-  
 
   return (
     <div>
