@@ -13,6 +13,7 @@ li {
 .searchBar input {
   border: none;
   background-color: #C4D0C6;
+  max-width: 175px;
 }
 
 .searchBar input:focus {
@@ -20,11 +21,16 @@ li {
 }
 
 .searchBar button {
+  border-radius: 10px;
+  min-width:18px;
   border: none;
-  background-color: #C4D0C6;
+  background-color: #E3E9E9;
   font-weight: bolder;
 }
 
+.searchBar button:hover {
+  background-color: #616666;
+}
 .resultsList {
   max-height:200px;
   overflow: scroll;

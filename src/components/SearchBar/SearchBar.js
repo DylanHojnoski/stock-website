@@ -46,7 +46,7 @@ const SearchBar = (props) => {
     <div>
       <div className={"searchBar"}>
       <input type='text' placeholder="Search" value={searchValue} onChange={handleInputChange} onFocus={changeShowResults} onBlur={changeShowResults}/>
-        {searchValue.length > 0 ? <button onClick={()=>clearButton()}>X</button> : null}
+        {searchValue.length > 0 ? <button onClick={()=>clearButton()}> X </button> : null}
       </div>
       <ul className={"resultsList"}>
         {showResults ? filteredStocks.map((stock) => {
