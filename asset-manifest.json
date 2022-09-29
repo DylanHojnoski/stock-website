@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/stock-website/static/css/main.620f9357.css",
-    "main.js": "/stock-website/static/js/main.24cf2b42.js",
+    "main.css": "/stock-website/static/css/main.f7517cc7.css",
+    "main.js": "/stock-website/static/js/main.55852e73.js",
     "static/media/star-svgrepo-com.svg": "/stock-website/static/media/star-svgrepo-com.8b84b8d558f6b1e0ccd935cb393a8968.svg",
     "static/media/house-svgrepo-com.svg": "/stock-website/static/media/house-svgrepo-com.c12196810d08fc044477897a75380a23.svg",
     "static/media/arrow.svg": "/stock-website/static/media/arrow.6ac1dd5e2466768fdde4bb7a348ebfde.svg",
     "index.html": "/stock-website/index.html",
-    "main.620f9357.css.map": "/stock-website/static/css/main.620f9357.css.map",
-    "main.24cf2b42.js.map": "/stock-website/static/js/main.24cf2b42.js.map"
+    "main.f7517cc7.css.map": "/stock-website/static/css/main.f7517cc7.css.map",
+    "main.55852e73.js.map": "/stock-website/static/js/main.55852e73.js.map"
   },
   "entrypoints": [
-    "static/css/main.620f9357.css",
-    "static/js/main.24cf2b42.js"
+    "static/css/main.f7517cc7.css",
+    "static/js/main.55852e73.js"
   ]
 }
