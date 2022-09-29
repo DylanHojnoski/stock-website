@@ -2,11 +2,32 @@ li {
   list-style-type: none;
 }
 
-input {
+.searchBar {
   padding: 5px;
   border-radius: 8px;
   border: none;
   background-color: #C4D0C6;
+  width: 200px;
+}
+
+.searchBar input {
+  border: none;
+  background-color: #C4D0C6;
+}
+
+.searchBar input:focus {
+  outline:none;
+}
+
+.searchBar button {
+  border: none;
+  background-color: #C4D0C6;
+  font-weight: bolder;
+}
+
+.resultsList {
+  max-height:200px;
+  overflow: scroll;
 }
 
 .searchItems {
