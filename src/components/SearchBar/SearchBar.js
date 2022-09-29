@@ -11,7 +11,6 @@ const SearchBar = (props) => {
   }
 
   const stocks = Array.from(props.stocks.entries())
-  console.log(stocks)
 
   let count = 0
   const filteredStocks = stocks.filter((stock) => {

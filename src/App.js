@@ -7,6 +7,7 @@ import FavoriteStocks from './components/FavoriteStocks/FavoriteStocks.js'
 import home from './images/house-svgrepo-com.svg'
 import star from './images/star-svgrepo-com.svg'
 import starClicked from './images/starClicked.png'
+import arrow from './images/arrow.svg'
 
 function App() {
   const [selectedStock, setSelectedStock] = useState("")
@@ -31,7 +32,7 @@ function App() {
         <button onClick={() => setSelectedStock("")} className={'homeButton'}><img src={home} className={'homeImg'} /></button>
         { stocks.size> 0 ? <SearchBar stocks={stocks} setSelectedStock={setSelectedStock}/> : null}
       </div>
-      { selectedStock.length > 0 ? <StockInformation ticker={selectedStock} setFavoriteStocks={setFavoriteStocks} favoriteStocks={favoriteStocks} star={[star, starClicked]} /> :
+      { selectedStock.length > 0 ? <StockInformation ticker={selectedStock} setFavoriteStocks={setFavoriteStocks} favoriteStocks={favoriteStocks} arrow={arrow} star={[star, starClicked]} /> :
         <FavoriteStocks setFavoriteStocks={setFavoriteStocks} favoriteStocks={favoriteStocks} setSelectedStock={setSelectedStock} stocks={stocks}/>}
     </div>
   );

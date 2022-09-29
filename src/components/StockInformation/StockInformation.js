@@ -76,9 +76,12 @@ const StockInformation = (props) => {
     )
   }
 
+  console.log(stock)
   return (
     <div>
-      {stock.size > 0 ? <div><h1>{stock.get('name')}</h1> <button onClick={favorite} className={'favoriteButton'}><img src={starSource} className={'starImg'} /></button></div> : null}
+      {stock.size > 0 ? <div><h1>{stock.get('name')}</h1>
+        <h2>${stock.get("price").toFixed(2)} {stock.get('change') > 0 ? <img className={"arrow"} src={props.arrow} /> : <img className={"downArrow"} src={props.arrow} />}</h2>
+        <button onClick={favorite} className={'favoriteButton'}><img src={starSource} className={'starImg'} /></button></div> : null}
       <StockGraph data={historical} ticker={props.ticker}/>
       <Table />
     </div>
