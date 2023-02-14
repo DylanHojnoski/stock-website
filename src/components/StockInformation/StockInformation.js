@@ -75,7 +75,6 @@ const StockInformation = (props) => {
     )
   }
 
-  console.log(stock)
   return (
     <div>
       {stock.size > 0 ? <div><h1>{stock.get('name')}</h1>
