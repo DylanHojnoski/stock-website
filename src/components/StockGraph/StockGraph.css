@@ -2,3 +2,34 @@ div {
   max-width: 2000px;
   max-height: 1000px;
 }
+
+.timeButton {
+  border: none;
+  border-radius: 3px;
+  background-color: #8FA5B2;
+  margin: 1px;
+  padding: 4px;
+}
+
+.timeButton:hover {
+  background-color:#556a76;
+}
+
+.graphHolder {
+  width: 80vw;
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.graph {
+  margin: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .graphHolder {
+    width: 100vw;
+  }
+}

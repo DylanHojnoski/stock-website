@@ -6,26 +6,35 @@ import { Line } from 'react-chartjs-2'
 const StockGraph = (props) => {
   const [months, setMonths] = useState(1)
   
+  Chart.defaults.elements.point.radius = 0
+  Chart.defaults.elements.point.hitRadius = 5
+  Chart.defaults.backgroundColor = '#E3E9E9'
+  Chart.defaults.elements.line.borderColor = '#8FA5B2'
+
   const data = {
     labels: [...props.data.keys()].slice(0,months*30).reverse(),
+    options: {
+      aspectRatio: 2,
+    },
     datasets: [
       {
-        label: "Graph",
+        label: props.ticker,
         data: [...props.data.values()].slice(0,months*30).reverse(),
       }
     ],
   }
   
-
-  console.log(props.data)
   return (
-  <div>
-      <Line data={data} />
-      <button onClick={() => setMonths(1)}>1 month</button>
-      <button onClick={() => setMonths(3)}>3 months</button>
-      <button onClick={() => setMonths(6)}>6 months</button>
-      <button onClick={() => setMonths(12)}>1 year</button>
-      <button onClick={() => setMonths(12*5)}>5 years</button>
+  <div className={'graphHolder'}>
+      <Line data={data}  className={'graph'}/>
+      <div>
+      <button onClick={() => setMonths(1)} className={'timeButton'}>1M</button>
+      <button onClick={() => setMonths(3)} className={'timeButton'}>3M</button>
+      <button onClick={() => setMonths(6)} className={'timeButton'}>6M</button>
+      <button onClick={() => setMonths(12)} className={'timeButton'}>1Y</button>
+      <button onClick={() => setMonths(12*5)} className={'timeButton'}>5Y</button>
+      <button onClick={() => setMonths(props.data.size)} className={'timeButton'}>All time</button>
+      </div>
   </div>
   )
 }

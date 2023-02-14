@@ -1,19 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import StockInformation from './components/StockInformation/StockInformation.js'
 import SearchBar from './components/SearchBar/SearchBar.js'
-import stockList from './stocks.json'
+//import stockList from './stocks.json'
+import FavoriteStocks from './components/FavoriteStocks/FavoriteStocks.js'
+import home from './images/house-svgrepo-com.svg'
+import star from './images/star-svgrepo-com.svg'
+import starClicked from './images/starClicked.png'
+import arrow from './images/arrow.svg'
 
 function App() {
-  const stocks = stockList.map((stock) => {
-    return [stock.symbol, stock.name]
-  })
   const [selectedStock, setSelectedStock] = useState("")
+  const [favoriteStocks, setFavoriteStocks] = useState(new Map())
+  const [stocks, setStocks] = useState(new Map())
+
+  useEffect(() => {
+    fetch('https://financialmodelingprep.com/api/v3/available-traded/list?apikey=11c771c287c55dc7ad7deca367d2c0c7')
+    .then(res => res.json())
+    .then((stockList) => {
+        const stockListMap = new Map()
+        stockList.map((stock => {
+          stockListMap.set(stock.symbol, [stock.name, stock.price])
+        }))
+        setStocks(stockListMap)
+      })
+  }, [])
 
   return (
     <div className="App">
-      <SearchBar stocks={stocks} setSelectedStock={setSelectedStock}/>
-      { selectedStock.length > 0 ? <StockInformation ticker={selectedStock} /> : null}
+      <div className={'navBar'}>
+        <button onClick={() => setSelectedStock("")} className={'homeButton'}><img src={home} className={'homeImg'} /></button>
+        { stocks.size> 0 ? <SearchBar stocks={stocks} setSelectedStock={setSelectedStock}/> : null}
+      </div>
+      { selectedStock.length > 0 ? <StockInformation ticker={selectedStock} setFavoriteStocks={setFavoriteStocks} favoriteStocks={favoriteStocks} arrow={arrow} star={[star, starClicked]} /> :
+        <FavoriteStocks setFavoriteStocks={setFavoriteStocks} favoriteStocks={favoriteStocks} setSelectedStock={setSelectedStock} stocks={stocks}/>}
     </div>
   );
 }
