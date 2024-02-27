@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react' 
-import ReactDOM from 'react-dom'
 import './StockInformation.css'
-import fmp from 'financialmodelingprep'
 import StockGraph from '../StockGraph/StockGraph.js'
-import FavoriteStocks from '../FavoriteStocks/FavoriteStocks.js'
 
 const StockInformation = (props) => {
   const [stock, setStock] = useState([])
