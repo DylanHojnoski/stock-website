@@ -52,11 +52,12 @@ const SearchBar = (props) => {
       <input type='text' placeholder="Search" value={searchValue} onChange={handleInputChange} onFocus={changeShowResults} onBlur={changeShowResults}/>
         {searchValue.length > 0 ? <button onClick={()=>clearButton()}> X </button> : null}
       </div>
+      {showResults && filteredStocks.length > 0 ?
       <ul className={"resultsList"}>
-        {showResults ? filteredStocks.map((stock) => {
+        {filteredStocks.map((stock) => {
           return <li key={stock[0]}><button className={"searchItems"} onClick={()=>buttonClick(stock[0])} key={stock[0]}>{stock[1][0]} ${stock[1][1]} </button></li>
-        }) : null}
-      </ul>
+        })}
+      </ul> : null}
     </div>
   )
 }

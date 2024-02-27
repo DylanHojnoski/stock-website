@@ -31,9 +31,16 @@ li {
 .searchBar button:hover {
   background-color: #616666;
 }
+
 .resultsList {
   max-height:200px;
   overflow: scroll;
+  position: absolute;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: #EAE9E7;
 }
 
 .searchItems {
