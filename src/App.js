@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './App.css';
 import StockInformation from './components/StockInformation/StockInformation.js'
 import SearchBar from './components/SearchBar/SearchBar.js'
-//import stockList from './stocks.json'
 import FavoriteStocks from './components/FavoriteStocks/FavoriteStocks.js'
 import home from './images/house-svgrepo-com.svg'
 import star from './images/star-svgrepo-com.svg'
@@ -13,9 +12,10 @@ function App() {
   const [selectedStock, setSelectedStock] = useState("")
   const [favoriteStocks, setFavoriteStocks] = useState(new Map())
   const [stocks, setStocks] = useState(new Map())
+  const apiKey = process.env.REACT_APP_API_KEY
 
   useEffect(() => {
-    fetch('https://financialmodelingprep.com/api/v3/available-traded/list?apikey=11c771c287c55dc7ad7deca367d2c0c7')
+    fetch('https://financialmodelingprep.com/api/v3/available-traded/list?apikey='+apiKey)
     .then(res => res.json())
     .then((stockList) => {
         const stockListMap = new Map()

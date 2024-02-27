@@ -6,9 +6,10 @@ const StockInformation = (props) => {
   const [stock, setStock] = useState([])
   const [historical, setHistorical] = useState(new Map())
   const [starSource, setStarSource] = useState(props.favoriteStocks.has(props.ticker) ? props.star[1] : props.star[0])
+  const apiKey = process.env.REACT_APP_API_KEY
 
   useEffect(() => {
-    fetch("https://financialmodelingprep.com/api/v3/quote/"+props.ticker.toUpperCase()+"?apikey=11c771c287c55dc7ad7deca367d2c0c7")
+    fetch("https://financialmodelingprep.com/api/v3/quote/"+props.ticker.toUpperCase()+"?apikey="+apiKey)
       .then(res=>res.json())
       .then((stockArray) => {
         const newStock = new Map()
@@ -18,7 +19,7 @@ const StockInformation = (props) => {
         setStock(newStock)
         
       })
-    fetch("https://financialmodelingprep.com/api/v3/historical-price-full/"+props.ticker.toUpperCase()+"?serietype=line&apikey=11c771c287c55dc7ad7deca367d2c0c7")
+    fetch("https://financialmodelingprep.com/api/v3/historical-price-full/"+props.ticker.toUpperCase()+"?serietype=line&apikey="+apiKey)
     .then(res => res.json())
     .then(historicalData => {
         const newData = new Map()
