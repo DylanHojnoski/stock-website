@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './SearchBar.css'
-import StockInformation from '../StockInformation/StockInformation.js'
 
 const SearchBar = (props) => {
   const [searchValue, setSearchValue] = useState("")
@@ -13,13 +12,18 @@ const SearchBar = (props) => {
   const stocks = Array.from(props.stocks.entries())
 
   let count = 0
-  const filteredStocks = stocks.filter((stock) => {
-    if (searchValue.length > 0 && count <= 10 && (stock[0].includes(searchValue.toUpperCase()) || stock[1][0].toUpperCase().includes(searchValue.toUpperCase()))) {
-      count++
-      return  true
-    }
-  })
 
+  let filteredStocks = []
+
+    if (stocks != null) {
+        filteredStocks = stocks.filter((stock) => {
+            if (searchValue.length > 0 && count <= 10 && (stock[0].includes(searchValue.toUpperCase()) || stock[1][0]?.toUpperCase().includes(searchValue.toUpperCase()))) {
+                count++
+                return  true
+            }
+            return false
+        })
+    }
 
   const changeShowResults = () => {
     if (showResults) {
